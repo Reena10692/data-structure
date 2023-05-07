@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+	int i,j;
+    char a[5][10];
+    for(i=0;i<5;i++){
+    	scanf("%s",&a[i]);
+	}
+	
+	char temp[10];
+	for(i=0;i<5;i++){
+		for(j=i+1;j<5;j++){
+			if(a[i][0]>a[j][0]){
+				strcpy(temp,a[i]);
+				strcpy(a[i],a[j]);
+				strcpy(a[j],temp);
+			}
+		}
+	}
+	printf("sorted array :");
+	for(i=0;i<5;i++){
+		printf("%s ",a[i]);
+	}
+}
